@@ -1,0 +1,52 @@
+\documentclass[oneside]{tum-book}
+
+\title{Production Order Release Agent in SAP S/4HANA Public Cloud Edition}
+\germantitle{Produktionsauftragsfreigabe-Agent in der SAP S/4HANA Public Cloud Edition}
+\author{Chaeeun (Joy) Lee, Duc Trung Nguyen}
+
+\chair{Chair of Information Systems and Business Process Management (i17)}
+\school{TUM School of Computation, Information and Technology}
+\department{Department of Computer Science}
+\thesistype{Interdisciplinary Project (IDP) Master’s of Informatics}
+
+\examiner{Prof. Dr. Helmut Krcmar}
+\supervisor{Philipp Landler}
+
+\hood{Garching}
+\submissiondate{30.09.2025}
+
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[intoc]{nomencl}
+\makenomenclature
+\addbibresource{literature.bib}
+
+\begin{document}
+  \input{chapters/00_Abstract}
+  \newpage
+
+  \tableofcontents
+  \listoftables
+  \listoffigures
+  \newpage
+
+  \input{chapters/01_Introduction}
+  \input{chapters/02_Related_Work}
+  \input{chapters/03_Solution_Design}
+  \input{chapters/04_Implementation}
+  \input{chapters/05_Evaluation}
+  \input{chapters/06_Discussion}
+  \input{chapters/07_Conclusion}
+
+  \newpage
+  \printbibliography[heading=bibintoc]
+  \newpage
+  \appendix
+  \input{chapters/99_Appendix}
+\end{document}

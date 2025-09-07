@@ -1,0 +1,34 @@
+\chapter{Introduction}
+\label{sec:Introduction}
+
+\section{Context and Motivation}
+Efficient production order release is a prerequisite for initiating manufacturing execution in SAP S/4HANA. Supervisors must ensure that all required materials and capacities are available before orders are released. This task is traditionally performed through multiple manual checks in different applications, which creates delays, inefficiencies, and risk of human error.
+
+\section{Problem Statement}
+Although SAP S/4HANA Public Cloud already provides ATP checks, capacity validations, and exception handling, these checks rely on accurate and complete BOM data. In practice, production planners often neglect to maintain BOMs properly, leaving gaps in component information. This makes it difficult for existing systems to automatically suggest alternatives when shortages occur, forcing supervisors to manually investigate, cross-check, and reschedule production orders.
+
+\section{Objectives and Research Questions}
+This IDP develops an AI-powered Production Order Release Agent that goes beyond standard release checks. Specifically, the project extends the agent’s capability to:
+\begin{itemize}
+  \item Detect missing or unavailable components,
+  \item Propose suitable alternatives from the BOM or current stock using Joule functions,
+  \item Recommend rescheduling if no alternatives are available.
+\end{itemize}
+
+By embedding these features, the agent reduces downtime caused by missing materials and increases the reliability of automated production release.
+
+The project is guided by the following research questions:
+\begin{enumerate}
+  \item How can AI agents integrated with SAP Joule Functions and OData APIs support production supervisors in automating order release?
+  \item How effective is the agent at recommending alternatives when BOM data is incomplete?
+  \item To what extent does the extended agent reduce manual effort and improve operational efficiency in production order release?
+\end{enumerate}
+
+\section{Structure of the Report}
+The report is organized as follows: 
+\Cref{chap:RelatedWork} reviews related work in production release automation and AI in manufacturing. 
+\Cref{chap:SolutionDesign} presents the solution design, including system requirements and architecture. 
+\Cref{chap:Implementation} details the implementation in SAP S/4HANA Public Cloud with Joule functions. 
+\Cref{chap:Evaluation} evaluates the agent against key performance indicators. 
+\Cref{chap:Discussion} discusses results, interdisciplinary aspects, and limitations. 
+Finally, \Cref{chap:Conclusion} concludes with key contributions and future work.
