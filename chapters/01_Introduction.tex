@@ -4,6 +4,77 @@
 \section{Context and Motivation}
 Efficient production order release is a prerequisite for initiating manufacturing execution in SAP S/4HANA. Supervisors must ensure that all required materials and capacities are available before orders are released. This task is traditionally performed through multiple manual checks in different applications, which creates delays, inefficiencies, and risk of human error.
 
+\section{Production Order Domain Terminology}
+\label{sec:Terminology}
+
+To establish a common understanding of the manufacturing domain, this section defines key terminology related to production orders and factory plant operations.
+
+\subsection{General Manufacturing Concepts}
+
+\textbf{Work Centers} represent specific areas within a plant where manufacturing operations are performed. Each plant typically contains several work centers such as paint, weld, and final assembly stations.
+
+The \textbf{Production Supervisor} serves as the mission control for daily production operations, with key responsibilities including:
+\begin{itemize}
+    \item Prioritizing order execution
+    \item Solving production problems
+    \item Managing daily production operations
+\end{itemize}
+
+In manufacturing systems, there are typically two types of orders:
+\begin{itemize}
+    \item \textbf{Planned Orders}: Preliminary production plans
+    \item \textbf{Production Orders}: Final instructions to manufacture specific quantities
+\end{itemize}
+
+\subsection{Production Order Definition and Attributes}
+
+A \textbf{Production Order} is an instruction to manufacture a specific quantity of a material at a specific time and place. Each production order contains the following key attributes:
+
+\begin{itemize}
+    \item \textbf{Material}: What to build
+    \item \textbf{Quantity}: How many units to produce
+    \item \textbf{Plant + Work Center}: Where the production will occur
+    \item \textbf{Start and Finish Date}: When production should begin and end
+    \item \textbf{BOM (Bill of Materials)}: List of required components
+    \item \textbf{Routing}: Which steps and stations to follow
+    \item \textbf{Production Version}: Combination of BOM and routing
+\end{itemize}
+
+\subsection{Production Order Statuses}
+
+Production orders progress through various statuses during their lifecycle:
+
+\begin{table}[h]
+\centering
+\caption{Production Order Status Definitions}
+\label{tab:po-statuses}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Status} & \textbf{Description} \\
+\midrule
+CRTD & Created but not released \\
+REL & Released for execution \\
+PCNF & Partially confirmed \\
+CNF & Fully confirmed \\
+TECO & Technically completed (no more work expected) \\
+CLSD & Closed (final stage) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Production Order Process Flow}
+
+The production order lifecycle follows a structured process flow:
+
+\begin{enumerate}
+    \item \textbf{Order Creation}: Convert planned orders to production orders and check material reservation
+    \item \textbf{Release}: Enable material withdrawal for production
+    \item \textbf{Material Staging}: Verify parts availability and issue materials from inventory to shop floor
+    \item \textbf{Execution}: Operators perform manufacturing steps and confirm operations in the system
+    \item \textbf{Good Receipt}: Report finished goods as received and update inventory
+    \item \textbf{Order Settlement \& Closure}: Settle costs to cost centers and close the order
+\end{enumerate}
+
 \section{Problem Statement}
 Although SAP S/4HANA Public Cloud already provides ATP checks, capacity validations, and exception handling, these checks rely on accurate and complete BOM data. In practice, production planners often neglect to maintain BOMs properly, leaving gaps in component information. This makes it difficult for existing systems to automatically suggest alternatives when shortages occur, forcing supervisors to manually investigate, cross-check, and reschedule production orders.
 
