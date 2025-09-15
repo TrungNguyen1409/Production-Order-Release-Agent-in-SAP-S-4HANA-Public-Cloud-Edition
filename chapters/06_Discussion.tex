@@ -1,22 +1,132 @@
 \chapter{Discussion and Outlook}
 \label{chap:Discussion}
 
-\section{Interpretation of Results}
-% Meaning for manufacturing
-How much would it cost to operate the agent in a real-world scenario?
-https://www.sap.com/products/data-cloud/hana/pricing.html
+\section{Economic Analysis}
 
+Understanding the operational costs of the production order release agent is crucial for evaluating its practical viability in real-world manufacturing scenarios. This section presents a detailed cost analysis based on actual usage traces and compares the SAP Joule platform with alternative solutions.
 
-Traces of 9ecf4987-a490-4314-b01f-91f9a7cac630 (Tokens: 47405, Costs: 0.17954 CU)
+\subsection{Cost Analysis Based on Real Usage Traces}
 
+The analysis is based on actual agent execution traces from the development process. A representative trace (ID: 9ecf4987-a490-4314-b01f-91f9a7cac630) processed 47,405 tokens with a consumption of 0.17954 CU, providing a baseline for cost calculations.
 
-apply filter on s4 layer to filter for alternative component for Scalability
+\subsubsection{SAP Joule Pricing Model}
+
+SAP's consumption unit (CU) model operates on a reservation-based pricing structure. Based on the trace data, we can calculate the cost efficiency as follows:
+
+\begin{itemize}
+    \item \textbf{1 agent call} → 47,405 tokens
+    \item \textbf{Consumption} → 0.17954 CU
+    \item \textbf{Calls per CU} → $\frac{1}{0.17954} \approx 5.57$ calls per 1 CU
+\end{itemize}
+
+\subsubsection{Scenario Analysis: 10 CU Reserved}
+
+For a typical enterprise deployment with 10 CU reserved capacity:
+
+\begin{itemize}
+    \item \textbf{Total calls possible}: $10 \times 5.57 \approx 55.7$ calls per month
+    \item \textbf{Monthly cost}: $10 \times 0.85$ USD = 8.50 USD/month
+    \item \textbf{Annual cost}: $8.50 \times 12 = 102$ USD/year
+    \item \textbf{Cost per call}: $\frac{8.50}{55.7} \approx 0.15$ USD per call
+\end{itemize}
+
+This configuration enables approximately 55 calls per month (660 calls annually) for approximately 102 USD per year.
+
+\subsection{Comparison with OpenAI Pricing}
+
+To provide context for the SAP Joule pricing, we compare it with OpenAI's GPT-4o pricing model as of 2025:
+
+\begin{itemize}
+    \item \textbf{Input tokens}: \$5.00 per 1M tokens
+    \item \textbf{Output tokens}: \$15.00 per 1M tokens
+\end{itemize}
+
+Assuming all 47,405 tokens are output (worst-case scenario):
+
+\begin{itemize}
+    \item \textbf{Cost per call}: $47,405 \times \frac{15}{1,000,000} = 0.711$ USD
+    \item \textbf{55 calls monthly cost}: $55 \times 0.711 \approx 39$ USD/month
+    \item \textbf{Annual cost}: $39 \times 12 \approx 468$ USD/year
+\end{itemize}
+
+\subsection{Direct Cost Comparison}
+
+Table~\ref{tab:cost_comparison} presents a direct comparison between SAP Joule and OpenAI pricing for equivalent usage patterns.
+
+\begin{table}[h]
+\centering
+\caption{Cost Comparison: SAP Joule vs OpenAI}
+\label{tab:cost_comparison}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Metric} & \textbf{SAP Joule (10 CU)} & \textbf{OpenAI (GPT-4o)} \\
+\hline
+Price per Year & \textbf{\$102} & \textbf{\$468} \\
+Calls per Month (47k tokens) & 55 & 55 \\
+Cost per Call & \textbf{\$0.15} & \textbf{\$0.71} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Key Insights}
+
+The analysis reveals several important considerations for enterprise deployment:
+
+\begin{enumerate}
+    \item \textbf{Cost Efficiency}: SAP's CU model provides significant cost advantages for predictable workloads, offering approximately 4-5× lower cost per call compared to OpenAI.
+    
+    \item \textbf{Usage Predictability}: The SAP model is most beneficial when usage patterns are predictable and fit within the reserved CU capacity. Unpredictable or highly variable usage may result in underutilized reservations.
+    
+    \item \textbf{Flexibility Trade-off}: While OpenAI offers more flexibility with pay-per-use pricing, the cost premium may be substantial for high-volume, consistent usage patterns typical in manufacturing environments.
+    
+    \item \textbf{Enterprise Considerations}: The CU model aligns well with enterprise budgeting practices, providing predictable monthly costs that facilitate financial planning and resource allocation.
+\end{enumerate}
+
+\subsection{Scaling Considerations}
+
+For larger-scale deployments, the cost advantages of the SAP Joule platform become more pronounced. A 100 CU reservation would enable approximately 557 calls per month for approximately 1,020 USD annually, maintaining the same cost efficiency while supporting higher throughput requirements typical in large manufacturing operations.
+
+The pricing model suggests that SAP Joule is particularly well-suited for manufacturing environments with consistent, predictable agent usage patterns, where the cost savings can be substantial compared to alternative solutions.
+
+\footnote{Source: \url{https://www.sap.com/products/data-cloud/hana/pricing.html}}
 \section{Challenges and Limitations}
-% Technical + organizational challenges % Generalizability, dependency on SAP Cloud
 
+The development and deployment of the production order release agent in SAP S/4HANA Public Cloud Edition revealed several significant challenges and limitations that impact both the development process and the practical applicability of the solution.
 
-\section{Contributions}
-% Technical + practical contributions
+\subsection{Environment and Access Constraints}
+
+The development environment presented substantial organizational and administrative barriers that significantly reduced development efficiency. Setting up a Business Technology Platform (BTP) subaccount for development required multiple layers of approval and admission processes, creating bottlenecks that limited effective development time. The current setup forces the entire development team to work on a shared subaccount, which severely restricts individual flexibility and creates potential conflicts during concurrent development efforts.
+
+Furthermore, the deployment and testing of new Joule instances proved to be extremely time-consuming due to the requirement for access to both the BTP subaccount and the Canary Cockpit. Creating destinations for agents in the Canary Cockpit requires specific roles that are difficult to obtain, further complicating the development workflow and creating dependencies on administrative approvals that can delay critical development milestones.
+
+\subsection{Stability and Performance Issues}
+
+The Joule platform demonstrated significant stability concerns throughout the development process. The system experienced extended downtime periods, including a nearly two-week outage that severely impacted development progress. Additionally, the response times were consistently slow, particularly during longer "thinking steps" where the agent processes complex reasoning tasks.
+
+A critical limitation emerged regarding the context window capacity, which proved insufficient to handle long purchase order (PO) lists effectively. This constraint directly impacts the practical applicability of the agent in real-world manufacturing scenarios where production orders often involve extensive component lists and detailed specifications.
+
+\subsection{Technical Development Challenges}
+
+The technical development process revealed several significant obstacles. The Handlebar syntax used in Joule proved to be unintuitive and error-prone, increasing development time and the likelihood of implementation errors. OData navigation within the SAP ecosystem was cumbersome, requiring extensive knowledge of SAP-specific data structures and access patterns.
+
+Debugging .yaml scripts became particularly challenging when deployment failures occurred, as the error messages and debugging tools provided limited insight into the root causes of issues. Additionally, there are restrictions on developing new APIs and limited access to required S/4HANA APIs, which constrains the agent's ability to integrate with all necessary system components.
+
+A fundamental limitation is the absence of a local backend for Joule development. Every request must be rendered on a remote server, making debugging significantly more difficult and increasing development cycle times. This architectural constraint forces developers to rely on remote debugging capabilities, which are often insufficient for complex troubleshooting scenarios.
+
+\subsection{Documentation and Usability Concerns}
+
+The documentation landscape for Joule proved inadequate for effective development. Minimal documentation exists on how Joule actually works internally, forcing developers to rely on trial-and-error approaches and community knowledge. The process of formatting Joule responses correctly for UI5 Cards was particularly unclear, requiring extensive experimentation to achieve proper integration.
+
+\subsection{Comparison with Open-Source Alternatives}
+
+The development experience with Joule contrasts sharply with open-source frameworks such as LangChain. Open-source solutions provide easier local development and testing capabilities, more flexible API and agent integration options, and significantly richer documentation with extensive community support. In contrast, the Joule platform feels closed, restrictive, and slow to iterate on, creating a development experience that hampers rapid prototyping and iterative improvement.
+
+These limitations collectively impact the generalizability of the solution and create dependencies on SAP Cloud infrastructure that may not be suitable for all manufacturing environments. The challenges also raise questions about the long-term maintainability and scalability of the agent-based approach within the current SAP ecosystem constraints.
 
 \section{Future Work}
-% Multi-agent systems, predictive maintenance, scaling
+
+Several promising directions emerge for extending and improving the production order release agent system. Future research should focus on developing multi-agent architectures that can handle complex manufacturing workflows through coordinated agent interactions. This includes implementing predictive maintenance capabilities that leverage historical production data to anticipate equipment failures and optimize maintenance schedules.
+
+Scaling considerations present another critical research avenue, particularly in developing more efficient token usage strategies and context window management techniques to handle larger production order datasets. Additionally, exploring hybrid approaches that combine the cost efficiency of SAP Joule with the flexibility of open-source frameworks could provide a more robust solution for diverse manufacturing environments.
+
+The integration of real-time sensor data and IoT connectivity represents a significant opportunity to enhance the agent's decision-making capabilities, enabling more dynamic and responsive production order management. Finally, developing standardized evaluation metrics and benchmarking frameworks will be essential for comparing different agent implementations and measuring their effectiveness across various manufacturing scenarios.

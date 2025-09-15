@@ -24,42 +24,30 @@
 \contentsline {section}{\numberline {3.3}Workflow}{12}{section.3.3}%
 \contentsline {subsection}{Primary Workflow}{12}{section*.5}%
 \contentsline {subsection}{Data Flow}{13}{Item.17}%
-\contentsline {section}{\numberline {3.4}Design Decisions}{13}{section.3.4}%
-\contentsline {subsection}{Technology Stack Selection}{13}{section*.6}%
-\contentsline {subsubsection}{Joule Integration}{13}{section*.6}%
-\contentsline {subsubsection}{OData Services}{13}{section*.6}%
-\contentsline {subsubsection}{Cucumber Testing Framework}{13}{section*.6}%
-\contentsline {subsection}{Data Strategy}{14}{section*.6}%
-\contentsline {subsubsection}{Historical Data Analysis}{14}{section*.6}%
-\contentsline {subsubsection}{Tailored Prompting}{14}{section*.6}%
-\contentsline {subsection}{Integration Architecture}{14}{section*.6}%
-\contentsline {chapter}{\numberline {4}Implementation}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Technical Setup}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Development Steps}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}UI Mockups and UX}{15}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Challenges During Implementation}{15}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Evaluation}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluation Criteria}{15}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Test Setup}{15}{section.5.2}%
-\contentsline {subsection}{Test Environment}{15}{section*.7}%
-\contentsline {subsection}{Test Dataset}{16}{section*.7}%
-\contentsline {subsection}{Test Scenario Explanations}{16}{table.caption.8}%
-\contentsline {subsection}{Testing Methodology}{17}{table.caption.9}%
-\contentsline {section}{\numberline {5.3}Results}{17}{section.5.3}%
-\contentsline {subsection}{Overall Performance}{17}{section*.10}%
-\contentsline {subsection}{Component Recommendation Analysis}{18}{section*.10}%
-\contentsline {subsection}{Key Findings}{18}{section*.10}%
-\contentsline {section}{\numberline {5.4}Discussion of Results}{18}{section.5.4}%
-\contentsline {subsection}{Strengths of the Agent}{18}{section*.11}%
-\contentsline {chapter}{\numberline {6}Discussion}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Interpretation of Results}{19}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interdisciplinary Aspects}{19}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Challenges}{19}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Limitations}{19}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{19}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary}{19}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Contributions}{19}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Work}{19}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Appendix}{20}{chapter.A}%
-\contentsline {section}{\numberline {A.1}Project Timeline and Milestones}{20}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Additional Figures}{20}{section.A.2}%
+\contentsline {chapter}{\numberline {4}Implementation}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Technical Setup}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Development Steps}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}UI Mockups and UX}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Challenges During Implementation}{13}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Evaluation}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Evaluation Criteria}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Test Setup}{14}{section.5.2}%
+\contentsline {subsection}{Test Environment}{14}{section*.6}%
+\contentsline {subsection}{Test Dataset}{14}{section*.6}%
+\contentsline {subsection}{Test Scenario Explanations}{15}{table.caption.7}%
+\contentsline {subsection}{Testing Methodology}{15}{table.caption.8}%
+\contentsline {section}{\numberline {5.3}Results}{16}{section.5.3}%
+\contentsline {subsection}{Overall Performance}{16}{section*.9}%
+\contentsline {subsection}{Component Recommendation Analysis}{16}{section*.9}%
+\contentsline {subsection}{Key Findings}{16}{section*.9}%
+\contentsline {section}{\numberline {5.4}Discussion of Results}{17}{section.5.4}%
+\contentsline {subsection}{Strengths of the Agent}{17}{section*.10}%
+\contentsline {chapter}{\numberline {6}Discussion and Outlook}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Interpretation of Results}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Challenges and Limitations}{17}{section.6.2}%
+\contentsline {subsection}{Environment and Access Constraints}{18}{section*.11}%
+\contentsline {subsection}{Stability and Performance Issues}{18}{section*.11}%
+\contentsline {subsection}{Technical Development Challenges}{18}{section*.11}%
+\contentsline {subsection}{Documentation and Usability Concerns}{19}{section*.11}%
+\contentsline {subsection}{Comparison with Open-Source Alternatives}{19}{section*.11}%
+\contentsline {section}{\numberline {6.3}Future Work}{19}{section.6.3}%
