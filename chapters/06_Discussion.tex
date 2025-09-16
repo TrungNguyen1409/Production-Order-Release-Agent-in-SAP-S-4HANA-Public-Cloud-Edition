@@ -11,7 +11,7 @@ The analysis is based on actual agent execution traces from the development proc
 
 \subsubsection{SAP Joule Pricing Model}
 
-SAP's consumption unit (CU) model operates on a reservation-based pricing structure. Based on the trace data, we can calculate the cost efficiency as follows:
+SAP's consumption unit (CU) model operates on a reservation-based pricing structure\footnote{Source: \url{https://www.sap.com/products/data-cloud/hana/pricing.html}}. Based on the trace data, we can calculate the cost efficiency as follows:
 
 \begin{itemize}
     \item \textbf{1 agent call} → 47,405 tokens
@@ -21,7 +21,7 @@ SAP's consumption unit (CU) model operates on a reservation-based pricing struct
 
 \subsubsection{Scenario Analysis: 10 CU Reserved}
 
-For a typical enterprise deployment with 10 CU reserved capacity:
+For a typical enterprise deployment with 10 CU reserved capacity\footnote{Source: \url{https://www.sap.com/products/data-cloud/hana/pricing.html}}:
 
 \begin{itemize}
     \item \textbf{Total calls possible}: $10 \times 5.57 \approx 55.7$ calls per month
@@ -70,7 +70,7 @@ Cost per Call & \textbf{\$0.15} & \textbf{\$0.71} \\
 
 \subsection{Key Insights}
 
-The analysis reveals several important considerations for enterprise deployment:
+The analysis reveals several important considerations for enterprise deployment\footnote{Source: \url{https://www.sap.com/products/data-cloud/hana/pricing.html}}:
 
 \begin{enumerate}
     \item \textbf{Cost Efficiency}: SAP's CU model provides significant cost advantages for predictable workloads, offering approximately 4-5× lower cost per call compared to OpenAI.
@@ -86,9 +86,8 @@ The analysis reveals several important considerations for enterprise deployment:
 
 For larger-scale deployments, the cost advantages of the SAP Joule platform become more pronounced. A 100 CU reservation would enable approximately 557 calls per month for approximately 1,020 USD annually, maintaining the same cost efficiency while supporting higher throughput requirements typical in large manufacturing operations.
 
-The pricing model suggests that SAP Joule is particularly well-suited for manufacturing environments with consistent, predictable agent usage patterns, where the cost savings can be substantial compared to alternative solutions.
+The pricing model suggests that SAP Joule is particularly well-suited for manufacturing environments with consistent, predictable agent usage patterns, where the cost savings can be substantial compared to alternative solutions\footnote{Source: \url{https://www.sap.com/products/data-cloud/hana/pricing.html}}.
 
-\footnote{Source: \url{https://www.sap.com/products/data-cloud/hana/pricing.html}}
 \section{Challenges and Limitations}
 
 The development and deployment of the production order release agent in SAP S/4HANA Public Cloud Edition revealed several significant challenges and limitations that impact both the development process and the practical applicability of the solution.
