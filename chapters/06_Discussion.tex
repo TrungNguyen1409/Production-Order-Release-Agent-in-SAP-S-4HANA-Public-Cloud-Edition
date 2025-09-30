@@ -104,6 +104,16 @@ The Joule platform demonstrated significant stability concerns throughout the de
 
 A critical limitation emerged regarding the context window capacity, which proved insufficient to handle long purchase order (PO) lists effectively. This constraint directly impacts the practical applicability of the agent in real-world manufacturing scenarios where production orders often involve extensive component lists and detailed specifications.
 
+\section{Challenges and Limitations}
+
+The development and deployment of the production order release agent in SAP S/4HANA Public Cloud Edition revealed several significant challenges and limitations that impact both the development process and the practical applicability of the solution.
+
+\subsection{Environment and Access Constraints}
+
+The development environment presented substantial organizational and administrative barriers that significantly reduced development efficiency. Setting up a Business Technology Platform (BTP) subaccount for development required multiple layers of approval and admission processes, creating bottlenecks that limited effective development time. The current setup forces the entire development team to work on a shared subaccount, which severely restricts individual flexibility and creates potential conflicts during concurrent development efforts.
+
+Furthermore, the deployment and testing of new Joule instances proved to be extremely time-consuming due to the requirement for access to both the BTP subaccount and the Canary Cockpit. Creating destinations for agents in the Canary Cockpit requires specific roles that are difficult to obtain, further complicating the development workflow and creating dependencies on administrative approvals that can delay critical development milestones.
+
 \subsection{Technical Development Challenges}
 
 The technical development process revealed several significant obstacles. The Handlebar syntax used in Joule proved to be unintuitive and error-prone, increasing development time and the likelihood of implementation errors. OData navigation within the SAP ecosystem was cumbersome, requiring extensive knowledge of SAP-specific data structures and access patterns.
@@ -111,6 +121,12 @@ The technical development process revealed several significant obstacles. The Ha
 Debugging .yaml scripts became particularly challenging when deployment failures occurred, as the error messages and debugging tools provided limited insight into the root causes of issues. Additionally, there are restrictions on developing new APIs and limited access to required S/4HANA APIs, which constrains the agent's ability to integrate with all necessary system components.
 
 A fundamental limitation is the absence of a local backend for Joule development. Every request must be rendered on a remote server, making debugging significantly more difficult and increasing development cycle times. This architectural constraint forces developers to rely on remote debugging capabilities, which are often insufficient for complex troubleshooting scenarios.
+
+\subsection{Stability and Performance Issues}
+
+The Joule platform demonstrated significant stability concerns throughout the development process. The system experienced extended downtime periods, including a nearly two-week outage that severely impacted development progress. Additionally, the response times were consistently slow, particularly during longer "thinking steps" where the agent processes complex reasoning tasks.
+
+A critical limitation emerged regarding the context window capacity, which proved insufficient to handle long purchase order (PO) lists effectively. This constraint directly impacts the practical applicability of the agent in real-world manufacturing scenarios where production orders often involve extensive component lists and detailed specifications.
 
 \subsection{Documentation and Usability Concerns}
 

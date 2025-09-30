@@ -37,38 +37,23 @@ The solution design focuses on an AI-enabled production order release system wit
 The solution architecture is designed around a multi-layered approach that integrates AI capabilities with SAP S/4HANA's existing infrastructure. The core components include:
 
 \begin{itemize}
-    \item \textbf{AI Agent Layer}: Central intelligence unit that processes production orders and makes release decisions
+    \item \textbf{Agentic Layer}: Central intelligence unit that processes production orders and makes release decisions
     \item \textbf{Joule Integration}: Independent copilot functionality that provides AI-powered assistance
-    \item \textbf{OData Services Layer}: Interface for accessing historical production data and SAP system information
-    \item \textbf{Testing Framework}: Cucumber-based automated testing infrastructure
-    \item \textbf{SAP S/4HANA Integration}: Native integration with the existing SAP system for automated production order release
+    \item \textbf{SAP S/4HANA Integration}: Native integration with the existing SAP system for automated production order release via OData APIs
 \end{itemize}
 
-
-\section{Workflow}
-
-The production order release workflow follows a streamlined process that emphasizes AI-driven decision making:
-
-\subsection{Primary Workflow}
-
-\begin{enumerate}
-    \item \textbf{Order Reception}: Production order is received by the system
-    \item \textbf{AI Analysis}: The AI agent analyzes the order description and compares it with historical data
-    \item \textbf{Historical Data Retrieval}: System fetches relevant production order information from the past month
-    \item \textbf{Component Analysis}: Instead of BOM checking, the system analyzes past production orders with similar components
-    \item \textbf{ATP Validation}: Available-to-Promise check for missing components
-    \item \textbf{Recommendation Generation}: AI generates release recommendations based on historical patterns
-    \item \textbf{Alternative Suggestions}: System provides alternative solutions based on past events
-    \item \textbf{Order Release Decision}: Final decision on whether to release the production order
-\end{enumerate}
-
-\subsection{Data Flow}
-
-The data flow emphasizes the integration between different system components:
-
-\begin{itemize}
-    \item Production order data flows from SAP S/4HANA to the AI agent
-    \item Historical data is retrieved via OData services from HANA database
-    \item Joule provides additional AI capabi   lities and tool selection
-    \item Recommendations flow back to the SAP system for final processing
-\end{itemize}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        layer/.style={rectangle, draw, fill=gray!20, text width=7cm, text centered, minimum height=1cm}
+    ]
+    
+    % Define layers
+    \node[layer] (ai) at (0, 2) {Agentic Layer};
+    \node[layer] (joule) at (0, 1) {Joule Integration};
+    \node[layer] (sap) at (0, 0) {SAP S/4HANA Integration};
+    
+    \end{tikzpicture}
+    \caption{System Architecture Overview}
+    \label{fig:system-architecture}
+\end{figure}
