@@ -37,23 +37,19 @@ The solution design focuses on an AI-enabled production order release system wit
 The solution architecture is designed around a multi-layered approach that integrates AI capabilities with SAP S/4HANA's existing infrastructure. The core components include:
 
 \begin{itemize}
-    \item \textbf{Agentic Layer}: Central intelligence unit that processes production orders and makes release decisions
+    \item \textbf{AI Agent Layer}: Central intelligence unit that processes production orders and makes release decisions
     \item \textbf{Joule Integration}: Independent copilot functionality that provides AI-powered assistance
-    \item \textbf{SAP S/4HANA Integration}: Native integration with the existing SAP system for automated production order release via OData APIs
+    \item \textbf{OData Services Layer}: Interface for accessing historical production data and SAP system information
+    \item \textbf{Testing Framework}: Cucumber-based automated testing infrastructure
+    \item \textbf{SAP S/4HANA Integration}: Native integration with the existing SAP system for automated production order release
 \end{itemize}
 
+\subsection{Architecture Diagram}
+
 \begin{figure}[h]
-    \centering
-    \begin{tikzpicture}[
-        layer/.style={rectangle, draw, fill=gray!20, text width=7cm, text centered, minimum height=1cm}
-    ]
-    
-    % Define layers
-    \node[layer] (ai) at (0, 2) {Agentic Layer};
-    \node[layer] (joule) at (0, 1) {Joule Integration};
-    \node[layer] (sap) at (0, 0) {SAP S/4HANA Integration};
-    
-    \end{tikzpicture}
-    \caption{System Architecture Overview}
-    \label{fig:system-architecture}
+\centering
+\includegraphics[width=1.0\textwidth]{graphic/IDP-highlevel.pdf}
+\caption{System Architecture Overview}
+\label{fig:system-architecture}
 \end{figure}
+

@@ -21,12 +21,13 @@
 \contentsline {subsection}{Non-Functional Requirements}{11}{section*.3}%
 \contentsline {section}{\numberline {3.2}System Architecture}{11}{section.3.2}%
 \contentsline {subsection}{Overview}{11}{section*.4}%
+\contentsline {subsection}{Architecture Diagram}{12}{section*.4}%
 \contentsline {chapter}{\numberline {4}Implementation}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Technical Setup}{12}{section.4.1}%
 \contentsline {subsection}{Technology Stack}{12}{section*.6}%
 \contentsline {section}{\numberline {4.2}Development Steps}{12}{section.4.2}%
 \contentsline {subsection}{Core Functions Implementation}{12}{section*.8}%
-\contentsline {subsubsection}{Production Order Management}{12}{section*.8}%
+\contentsline {subsubsection}{Production Order Management}{13}{section*.8}%
 \contentsline {subsubsection}{Component Analysis}{13}{section*.8}%
 \contentsline {subsubsection}{AI-Powered Alternative Discovery}{13}{section*.8}%
 \contentsline {subsection}{AI Agent Configuration}{13}{section*.8}%
@@ -54,13 +55,13 @@
 \contentsline {subsection}{Cost Analysis Based on Real Usage Traces}{20}{section*.17}%
 \contentsline {subsubsection}{SAP Joule Pricing Model}{20}{section*.17}%
 \contentsline {subsubsection}{Scenario Analysis: 10 CU Reserved}{20}{section*.17}%
-\contentsline {subsection}{Comparison with OpenAI Pricing}{21}{section*.17}%
+\contentsline {subsection}{Comparison with OpenAI Pricing}{20}{section*.17}%
 \contentsline {subsection}{Direct Cost Comparison}{21}{section*.17}%
 \contentsline {subsection}{Key Insights}{21}{table.caption.18}%
 \contentsline {subsection}{Scaling Considerations}{22}{Item.24}%
 \contentsline {section}{\numberline {6.2}Challenges and Limitations}{22}{section.6.2}%
 \contentsline {subsection}{Environment and Access Constraints}{22}{section*.19}%
-\contentsline {subsection}{Technical Development Challenges}{23}{section*.19}%
+\contentsline {subsection}{Technical Development Challenges}{22}{section*.19}%
 \contentsline {subsection}{Stability and Performance Issues}{23}{section*.19}%
 \contentsline {subsection}{Documentation and Usability Concerns}{23}{section*.19}%
 \contentsline {subsection}{Comparison with Open-Source Alternatives}{24}{section*.19}%
